@@ -3,10 +3,7 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "start": "node src/index.js",
-        "build": "tsc",
-        "heroku-postbuild": "ng build --prod",
-        "dev": "nodemon src/index.ts --exec ts-node"
+        "start": "node src/index.js"
     },
     "keywords": [],
     "author": "",
