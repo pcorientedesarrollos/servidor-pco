@@ -10,6 +10,7 @@
     "license": "ISC",
     "devDependencies": {
         "nodemon": "^2.0.4"
+        
     },
     "dependencies": {
         "@types/mysql2": "github:types/mysql2",
