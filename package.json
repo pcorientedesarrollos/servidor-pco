@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "build" : "tsc",
-        "start": "npm run build && node dist/index.js" 
+        "build": "tsc",
+        "start": "npm run build && node dist/index.js"
     },
     "keywords": [],
     "author": "",
@@ -12,6 +12,7 @@
     "devDependencies": {
         "@types/express": "^4.17.6",
         "@types/morgan": "^1.9.0",
+        "@types/mysql": "^2.15.17",
         "nodemon": "^2.0.4",
         "typescript": "^3.9.3"
     },

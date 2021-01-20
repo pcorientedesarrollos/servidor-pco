@@ -1,9 +1,9 @@
-import { createPool } from 'mysql2/promise'
+// import mysql  from 'mysql'
+const mysql = require('mysql2/promise')
 
 
 
 export async function connect() {
-
     // const connection = createPool({
     //     host: 'localhost',
     //     user: 'root',
@@ -12,15 +12,15 @@ export async function connect() {
     //     database: 'webpcoriente',
     //     connectionLimit: 10
     // })
-
-    const connection = createPool({
+    const connection = await mysql.createConnection({
         host: 'mysql.pcoriente.com.mx',
         user: 'useroriente',
         password: 'Oriente65',
         // database: 'node_mysql_ts',
-        database: 'webpcoriente',
-        connectionLimit: 10
-    })
+        database: 'webpcoriente'
+        })
 
     return connection
 }
+
+connect()
