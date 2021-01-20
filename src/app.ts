@@ -16,7 +16,6 @@ export class App {
     private app: Application
 
     constructor(private port?: number | string) {
-
         this.app = express()
         this.settings()
         this.middlewares()
@@ -34,7 +33,6 @@ export class App {
         this.app.use(morgan('dev'))
         // this.app.use(express.urlencoded({extended: false})) //recibir datos de formularios
         this.app.use(express.json())
-
     }
 
     routes() {
@@ -51,7 +49,7 @@ export class App {
 
     listen() {
         this.app.listen(this.app.get('port'))
-        console.log('Mi servidor funcionando', this.app.get('port'))
+        console.log('Servidor funcionando...', this.app.get('port'))
 
     }
 }
