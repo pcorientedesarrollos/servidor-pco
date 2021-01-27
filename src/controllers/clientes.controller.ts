@@ -82,3 +82,14 @@ export async function deleteUnTelefono(req: Request, res: Response) {
 
     res.json({ message: 'Telefono eliminado' })
 }
+
+export async function getTelefonoCliente(req: Request, res: Response){
+    const id = req.params.postId
+    try {
+        const conn = await connect()
+        const telefono = await conn.query('SELECT * FROM telefonos_cliente tc WHERE tc.idCliente = ? ORDER BY tc.idTelefono DESC LIMIT 1 ', [id])
+        return res.json(telefono[0])
+    } catch (e) {
+        console.log(e)
+    }
+}

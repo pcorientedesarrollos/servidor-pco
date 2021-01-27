@@ -41,7 +41,7 @@ export async function updateProducto(req: Request, res: Response) {
 export async function getProductosVenta(req: Request, res: Response): Promise<Response | void> {
     try {
         const conn = await connect()
-        const productos = await conn.query(`SELECT * FROM productos WHERE tipo = 'venta' ORDER BY idProducto DESC`)
+        const productos = await conn.query(`SELECT nombre,precioPublico,descripcion,codigo,unidad FROM productos WHERE tipo = 'venta' ORDER BY idProducto DESC`)
         return res.json(productos[0])
     } catch (e) {
         console.log(e)

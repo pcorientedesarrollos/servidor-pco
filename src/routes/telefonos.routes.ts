@@ -1,6 +1,6 @@
 import { Router } from 'express';
 const router = Router()
-import { getTelefonosCliente,createTelefono,deleteUnTelefono } from '../controllers/clientes.controller';
+import { getTelefonoCliente,getTelefonosCliente,createTelefono,deleteUnTelefono } from '../controllers/clientes.controller';
 
 router.route('/')
     .get(getTelefonosCliente)
@@ -8,5 +8,6 @@ router.route('/')
 
 router.route('/:postId')
     .delete(deleteUnTelefono)
+    .get(getTelefonoCliente)
 
 export default router
