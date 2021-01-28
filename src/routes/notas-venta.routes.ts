@@ -1,6 +1,6 @@
 import { Router } from 'express';
 const router = Router()
-import { getNotasVenta,createNotaVenta,createNotaVentaDetalle,getNotaVenta, updateEncabezadoNotaV,updateDetalleNotaV,deleteProductoDetalle } from '../controllers/notas-venta.controller';
+import { getNotasVentaCliente,getNotasVenta,createNotaVenta,createNotaVentaDetalle,getNotaVenta, updateEncabezadoNotaV,updateDetalleNotaV,deleteProductoDetalle } from '../controllers/notas-venta.controller';
 
 router.route('/')
 .post(createNotaVenta)
@@ -21,6 +21,7 @@ router.route('/editarDetalle/:postId')
 
 router.route('/:postId')
 .delete(deleteProductoDetalle)
+.get(getNotasVentaCliente)
 
 
 

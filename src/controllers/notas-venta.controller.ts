@@ -24,6 +24,25 @@ ORDER BY idFactura DESC `);
   }
 }
 
+export async function getNotasVentaCliente(req: Request,res: Response): Promise<Response | void> {
+  const idCliente = req.params.postId;
+  try {
+    const conn = await connect();
+    const notas = await conn.query(`SELECT CASE 
+    WHEN ef.estatus = 'c' 
+       THEN 'CANCELADO'
+       ELSE 'ACTIVO'
+     END as estatusL, ef.*, cl.*
+  FROM encabezado_factura ef 
+  LEFT JOIN clientes cl ON 
+  cl.id = ef.idCliente
+  WHERE ef.presupuesto != 1 AND cl.id = ${idCliente}
+  ORDER BY idFactura DESC `);
+    return res.json(notas[0]);
+  } catch (e) {
+    console.log(e);
+  }
+}
 
 export async function createNotaVenta(req: Request, res: Response) {
   const newFacturaEncabezado= req.body
