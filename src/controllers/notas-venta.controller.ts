@@ -19,8 +19,6 @@ ORDER BY idFactura DESC `);
     return res.json(notas[0]);
   } catch (e) {
     console.log(e);
-    console.log(fecha)
-
   }
 }
 

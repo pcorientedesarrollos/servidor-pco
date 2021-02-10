@@ -11,6 +11,7 @@ import ProveedoresRoutes from './routes/proveedores.routes'
 import EquiposRoutes from './routes/equipos.routes'
 import DiagnosticosRoutes from './routes/diagnosticos.routes'
 import NotasVentaRoutes from './routes/notas-venta.routes'
+import ServiciosRoutes from './routes/servicios.routes'
 
 export class App {
     private app: Application
@@ -55,6 +56,7 @@ export class App {
         this.app.use('/equipos', EquiposRoutes)
         this.app.use('/diagnosticos', DiagnosticosRoutes)
         this.app.use('/notasVenta', NotasVentaRoutes)
+        this.app.use('/servicios', ServiciosRoutes)
     }
 
     listen() {
