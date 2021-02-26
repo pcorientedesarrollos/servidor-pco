@@ -22,7 +22,7 @@ export async function getEquipo(req: Request, res: Response): Promise<Response> 
 export async function getEquiposCliente(req: Request, res: Response): Promise<Response> {
     const idCliente = req.params.postId
     const conn = await connect()
-    const equipos = await conn.query('Select ec.* from equiposcliente ec LEFT JOIN clientes cli ON cli.id = ec.idCliente Where cli.id  = ?', [idCliente])
+    const equipos = await conn.query('Select ec.* from equiposcliente ec LEFT JOIN clientes cli ON cli.id = ec.idCliente Where cli.id  = ? ORDER BY ec.idEquipo  DESC', [idCliente])
     return res.json(equipos[0])
 }
 
