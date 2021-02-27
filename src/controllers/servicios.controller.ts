@@ -23,9 +23,10 @@ export async function getServicios(req: Request,res: Response): Promise<Response
   export async function updateEstado(req: Request, res: Response) {
     const estado = req.params.estado;
     const id = req.params.postId;
+    const fechaSalida = req.params.fechaSalida;
     console.log(estado, id)
     const conn = await connect()
-    await conn.query('UPDATE diagnosticosequipos SET estado = ? WHERE id = ?  ', [estado,id])
+    await conn.query('UPDATE diagnosticosequipos SET estado = ? ,fechaSalida = ? WHERE id = ?  ', [estado,fechaSalida,id])
     return res.json({
         message: 'Estado modificado'
     })

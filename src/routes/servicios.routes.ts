@@ -5,7 +5,7 @@ import { getServicios,updateEstado } from '../controllers/servicios.controller';
 router.route('/:inicio/:fin')
     .get(getServicios)
 
-router.route('/:postId/:estado')
+router.route('/:postId/:estado/:fechaSalida')
     .put(updateEstado)
 
 
